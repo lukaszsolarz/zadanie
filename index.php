@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible">
+    <title> zadanie</title>
+</head>
+<link rel="stylesheet" href="styleCss.css"/>
+<body id="body">
+<div id="container">
+</div>
 <script>
     console.log("hello its me")
     fetch("peopleData.json")
@@ -17,8 +25,6 @@
     })
 
 </script>
+</div>
 </body>
 </html>
-</body>
-</html>
-
