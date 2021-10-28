@@ -1,0 +1,9 @@
+#body{
+background-color: rgba(160, 179, 201, 0.32);
+}
+#id_result{
+    color: #1417b6;
+}
+#id_warning{
+    color: crimson;
+}
