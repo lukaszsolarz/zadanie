@@ -10,11 +10,19 @@
 <div id="container">
 </div>
 <form class="form" method="post">
-       Imię: <input type="text"  name="name">
+       Imię: <input type="text"  name="fname">
     <button type="submit">Wyślij</button>
 </form>
+<?
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$name = $_POST['fname'];
+if (empty($name)) {
+echo "Sorry name is empty";
+}}
+?>
 
 <script>
+
     console.log("hello its me")
     fetch("peopleData.json")
     .then(response => response.json())
@@ -22,10 +30,10 @@
         console.log(data)
         for(var i=0; i<data.length; i++)
         {
-            if(data[i].first_name=='Timmy')
+            if(data[i].first_name =="<?php echo $name; ?>")
             {
                 console.log(data[i])
-                document.getElementById("id_first_name").innerHTML =data[i].first_name;
+                document.getElementById("id_first_name").innerText =data[i].first_name;
                 document.getElementById("id_last_name").innerHTML =data[i].last_name;
                 document.getElementById("id_gender").innerHTML =data[i].gender;
                 document.getElementById("id_age").innerHTML =data[i].age;
@@ -35,13 +43,13 @@
         }
     })
 
-
 </script>
-<div id="id_first_name"></div>
-<div id="id_last_name"></div>
-<div id="id_gender"></div>
-<div id="id_age"></div>
-<div id="id_height"></div>
+<br><br>
+name: <div id="id_first_name"></div> <br>
+last name: <div id="id_last_name"></div><br>
+gender: <div id="id_gender"></div><br>
+age: <div id="id_age"></div><br>
+height: <div id="id_height"></div><br>
 
 </div>
 </body>
